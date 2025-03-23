@@ -10,7 +10,7 @@ body {
 }
 
 /* Centered Container */
-div {
+#container {
     background: #fff;
     padding: 30px;
     border-radius: 8px;
@@ -68,3 +68,76 @@ a button {
 a button:hover {
     background-color: #218838;
 }
+
+
+/* Chat Header */
+.chat-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 15px;
+    text-align: center;
+}
+
+/* Chat Messages Container */
+#chat-container {
+    max-width: 800px;
+    margin: 0 auto;
+    height: 70vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+/* Message Styling */
+.message {
+    background: #c0c0c0;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    text-align: left;
+    max-width: 60%;
+}
+
+/* User's Own Messages */
+.message.self {
+    background: #e0e0e0;
+    text-align: left;
+    align-self: flex-start;
+}
+
+/* System Messages */
+.message.system {
+    background: #a9a9a9;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+}
+
+/* Input Container */
+#input-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #1c3d5a;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Input Field */
+#message-input {
+    width: 70%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+}
+
