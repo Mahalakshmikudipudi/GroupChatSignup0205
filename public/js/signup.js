@@ -21,7 +21,7 @@ async function signup(e) {
         }
     } catch (err) {
         if(response.status === 400) {
-            alert("User already exists");
+            alert(response.data.message);
         }
         document.body.innerHTML += `<div style="color:red;">${err.message}</div>`
     }
