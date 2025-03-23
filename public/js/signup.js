@@ -9,20 +9,24 @@ async function signup(e) {
             phonenumber: e.target.phonenumber.value,
             password: e.target.password.value
         }
-        console.log(signupDetails);
+        //console.log(signupDetails);
         const response = await axios.post("http://localhost:3000/user/signup", signupDetails)
         if (response.status === 201) {
-            window.location.href = "../html/login.html" //change the page on successful login
+            //window.location.href = "../html/login.html" //change the page on successful login
+            alert("Succesfully signed up")
         } else {
             throw new Error('Failed to login')
         }
     } catch (err) {
-        document.body.innerHTML += `<div style="color:red;">${err}</div>`
+        alert("User already exists");
+        document.body.innerHTML += `<div style="color:red;">${err.message}</div>`
     }
 
     document.getElementById("name").value = "";
     document.getElementById("email").value = "";
     document.getElementById("phonenumber").value = "";
     document.getElementById("password").value = "";
+
+    
 
 }

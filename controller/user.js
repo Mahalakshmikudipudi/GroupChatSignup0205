@@ -12,10 +12,17 @@ function isstringinvalid(string){
  const signup = async (req, res)=>{
     try{
     const { name, email, phonenumber, password } = req.body;
+    
     //console.log('email', email)
     if(isstringinvalid(name) || isstringinvalid(email) || isstringinvalid(password) || isstringinvalid(phonenumber)){
-        return res.status(400).json({err: "Bad parameters . Something is missing"})
+        return res.status(400).json({err: "Bad parameters, Something is missing"})
     }
+
+    const existingUser = await User.findOne({ where: { email } });
+    if (existingUser) {
+      return res.status(400).json({ message: "User already exists" });
+    }
+
     const saltrounds = 10;
     bcrypt.hash(password, saltrounds, async (err, hash) => {
         console.log(err)
