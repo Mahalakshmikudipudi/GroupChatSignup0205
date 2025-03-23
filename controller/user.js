@@ -1,4 +1,4 @@
-const User = require('../models/users');
+const User = require('../models/user');
 const bcrypt = require('bcrypt')
 
 function isstringinvalid(string){
@@ -11,19 +11,19 @@ function isstringinvalid(string){
 
  const signup = async (req, res)=>{
     try{
-    const { name, email, password } = req.body;
+    const { name, email, phonenumber, password } = req.body;
     //console.log('email', email)
-    if(isstringinvalid(name) || isstringinvalid(email) || isstringinvalid(password)){
+    if(isstringinvalid(name) || isstringinvalid(email) || isstringinvalid(password) || isstringinvalid(phonenumber)){
         return res.status(400).json({err: "Bad parameters . Something is missing"})
     }
     const saltrounds = 10;
     bcrypt.hash(password, saltrounds, async (err, hash) => {
         console.log(err)
-        await User.create({ name, email, password: hash })
-        res.status(201).json({message: 'Successfuly create new user'})
+        await User.create({ name, email, phonenumber, password: hash })
+        res.status(201).json({success: true, message: 'Successfuly create new user'})
     })
     }catch(err) {
-            res.status(500).json(err);
+            res.status(500).json({success: false, message: 'Failed to create new user'});
         }
 
 }
