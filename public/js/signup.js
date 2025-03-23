@@ -1,3 +1,5 @@
+const { response } = require("express");
+
 async function signup(e) {
     try {
         e.preventDefault();
@@ -12,13 +14,15 @@ async function signup(e) {
         //console.log(signupDetails);
         const response = await axios.post("http://localhost:3000/user/signup", signupDetails)
         if (response.status === 201) {
-            //window.location.href = "../html/login.html" //change the page on successful login
-            alert("Succesfully signed up")
+            alert("Succesfully signed up");
+            window.location.href = "../html/login.html"; //change the page on successful login
         } else {
-            throw new Error('Failed to login')
+            throw new Error('Failed to login');
         }
     } catch (err) {
-        alert("User already exists");
+        if(response.status === 400) {
+            alert("User already exists");
+        }
         document.body.innerHTML += `<div style="color:red;">${err.message}</div>`
     }
 

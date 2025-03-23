@@ -15,7 +15,7 @@ function isstringinvalid(string){
     
     //console.log('email', email)
     if(isstringinvalid(name) || isstringinvalid(email) || isstringinvalid(password) || isstringinvalid(phonenumber)){
-        return res.status(400).json({err: "Bad parameters, Something is missing"})
+        return res.status(401).json({err: "Bad parameters, Something is missing"})
     }
 
     const existingUser = await User.findOne({ where: { email } });
