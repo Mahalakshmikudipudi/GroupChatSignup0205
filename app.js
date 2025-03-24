@@ -6,9 +6,11 @@ var cors = require('cors')
 
 const sequelize = require('./util/database');
 const User = require('./models/user');
+const Chat = require('./models/chatapp')
 
 
 const userRoutes = require('./routes/user');
+const messageRoutes = require('./routes/chatapp');
 
 
 const app = express();
@@ -24,7 +26,11 @@ app.use(
 
 app.use(express.json());
 
-app.use('/user', userRoutes)
+app.use('/user', userRoutes);
+app.use('/chat', messageRoutes);
+
+User.hasMany(Chat);
+Chat.belongsTo(User);
 
 sequelize.sync()
     .then(() => {

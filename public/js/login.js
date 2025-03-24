@@ -14,7 +14,8 @@ async function login(e) {
             alert(response.data.message);
 
             localStorage.setItem("token", response.data.token); // Store JWT Token
-            window.location.href = "../html/chatapp.html"; // Redirect to expense page
+            window.location.href = "../html/chatapp.html"; // Redirect to chat page
+            
             
             // Clear input fields after successful login
             e.target.email.value = "";
