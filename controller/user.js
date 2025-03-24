@@ -70,8 +70,28 @@ const login = async (req, res) => {
     }
 };
 
+const logoutUser = async(req, res) => {
+    try {
+        
+        // If using sessions, destroy it
+        if (req.session) {
+            req.session.destroy(err => {
+                if (err) {
+                    return res.status(500).json({ message: 'Logout failed. Try again!' });
+                }
+                res.status(200).json({ message: 'Logged out successfully!' });
+            });
+        } else {
+            res.status(200).json({ message: 'Logged out successfully!' });
+        }
+    } catch (error) {
+        res.status(500).json({ message: 'Something went wrong!' });
+    }
+};
+
 module.exports = {
     signup,
     login,
-    generateAccessToken
+    generateAccessToken,
+    logoutUser
 }

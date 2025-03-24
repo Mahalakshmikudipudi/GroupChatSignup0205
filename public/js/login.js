@@ -17,6 +17,7 @@ async function login(e) {
             window.location.href = "../html/chatapp.html"; // Redirect to chat page
             
             
+            
             // Clear input fields after successful login
             e.target.email.value = "";
             e.target.password.value = "";

@@ -14,16 +14,23 @@
 </head>
 
 <body>
-    <h1 class="chat-header">Chat App</h1>
-
-
-    <div id="chat-box">
-        <ul id="messages-list"></ul>
+    
+    <div class="headings" class="container-fluid">
+        <header>
+            <h1>Chat App</h1>
+            <button onclick="logout()" id="logoutBtn" class="btn btn-danger">Logout</button>
+        </header>
     </div>
-    <footer>
+    
+    <div id="chat-box" class="container-fluid">
+        <ul id="messages-list"></ul>
+        <ul id="chat-list"></ul>
+    </div>
+
+    <div id="chat-input-container">
         <input type="text" id="chat-input" placeholder="Type a message...">
-        <button onclick="sendMessage()">Send</button>
-    </footer>
+        <button id="send-button" onclick="sendMessage()" class="btn btn-primary">Send</button>
+    </div>
 
 
 
