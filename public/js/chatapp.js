@@ -35,6 +35,7 @@ async function loadMessages() {
 
             
         });
+        chatList.scrollTop = chatList.scrollHeight;
     } catch (error) {
         console.error('Error fetching messages:', error);
     }
@@ -64,8 +65,8 @@ document.getElementById("chat-input").addEventListener("keypress", (event) => {
     }
 });
 
-// Load messages on page load
-window.onload = loadMessages;
+setInterval(loadMessages, 1000); // Fetch new messages every 3 seconds
+
 
 async function logout() {
     try {
