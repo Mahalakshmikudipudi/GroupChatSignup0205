@@ -168,6 +168,26 @@ h1 {
     outline: none;
     margin-left: 15px;
 }
+#groupchat-input-container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #1f4a61;
+    padding: 10px;
+    display: flex;
+}
+
+/* Chat Input */
+#groupchat-input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    margin-left: 15px;
+}
+
 
 /* Send Button */
 #send-button {
@@ -189,3 +209,138 @@ h1 {
     margin-left: auto; /* Pushes the button to the right */
     
 }
+
+li {
+    cursor: pointer;
+}
+
+.my-message {
+    background-color: #d1e7dd; /* Light Green */
+    color: #0a3622; /* Dark Green Text */
+    
+}
+
+.other-message {
+    background-color: #cfe2ff; /* Light Blue */
+    color: #084298; /* Dark Blue Text */
+    
+}
+
+#groupmessages-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Message Styling */
+#groupmessages-list li {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: lightgray;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    width: 100%;
+}
+
+/* Sidebar on the Left */
+#sidebar-group {
+    width: 40%;
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Invite Section on the Right */
+#invite-container {
+    width: 40%;
+    background: #e9ecef;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #sidebar-group, #invite-container {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+}
+
+#search-bar {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    background: #f1f1f1;
+    border-radius: 8px;
+}
+
+#search-bar input {
+    width: 60%;
+    padding: 8px;
+    margin-right: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#search-bar button {
+    padding: 8px 12px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#search-bar button:hover {
+    background: #218838;
+}
+
+/* Main Content Layout */
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* Sidebar (Left) */
+
+
+/* Invite Section (Right) */
+#invite-container {
+    width: 40%;
+    background: #e9ecef;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #sidebar-group, #invite-container {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+}
+
+
+
