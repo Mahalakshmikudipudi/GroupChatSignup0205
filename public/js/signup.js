@@ -1,36 +1,32 @@
-const { response } = require("express");
+const socket = io("http://localhost:3000");
 
 async function signup(e) {
-    try {
-        e.preventDefault();
-        //console.log(e.target.email.value);
+    e.preventDefault();
 
-        const signupDetails = {
-            name: e.target.name.value,
-            email: e.target.email.value,
-            phonenumber: e.target.phonenumber.value,
-            password: e.target.password.value
-        }
-        //console.log(signupDetails);
-        const response = await axios.post("http://localhost:3000/user/signup", signupDetails)
-        if (response.status === 201) {
-            alert("Succesfully signed up");
-            window.location.href = "../html/login.html"; //change the page on successful login
+    const signupDetails = {
+        name: e.target.name.value,
+        email: e.target.email.value,
+        phonenumber: e.target.phonenumber.value,
+        password: e.target.password.value
+    };
+
+    // Emit signup event to the server
+    socket.emit("signup", signupDetails);
+
+    // Listen for server response
+    socket.on("signup-response", (data) => {
+        if (data.success) {
+            alert("Successfully signed up");
+            window.location.href = "../html/login.html"; // Redirect to login page
         } else {
-            throw new Error('Failed to login');
+            alert(data.message);
+            document.body.innerHTML += `<div style="color:red;">${data.message}</div>`;
         }
-    } catch (err) {
-        if(response.status === 400) {
-            alert(response.data.message);
-        }
-        document.body.innerHTML += `<div style="color:red;">${err.message}</div>`
-    }
 
-    document.getElementById("name").value = "";
-    document.getElementById("email").value = "";
-    document.getElementById("phonenumber").value = "";
-    document.getElementById("password").value = "";
-
-    
-
+        // Clear input fields
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("phonenumber").value = "";
+        document.getElementById("password").value = "";
+    });
 }

@@ -2,8 +2,9 @@ const { DataTypes } = require("sequelize");
 const sequelize = require("../util/database");
 const User = require("../models/user");
 const Group = require("../models/group");
+const GroupMember = require("../models/groupMember");
 
-const Message = sequelize.define("Message", {
+const ArchivedChat = sequelize.define("ArchivedChat", {
     id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
@@ -50,6 +51,4 @@ const Message = sequelize.define("Message", {
     },
 });
 
-
-
-module.exports = Message;
+module.exports = ArchivedChat;

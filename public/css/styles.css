@@ -1,346 +1,387 @@
 /* General Page Styling */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     height: 100vh;
+}
+
+/* Navigation Bar */
+#header {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 10px 0;
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    
+
+}
+#header a {
+    text-decoration: none;
+    color: white;
+    margin-left: 1200px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
     margin: 0;
 }
-header {
-    background: #2c3e50;
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a button {
+    background: #ffffff;
+    color: #6a11cb;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+nav ul li a button:hover {
+    background: #2575fc;
     color: white;
-    padding: 5px;
-    font-size: 2px;
-    padding-bottom: 20px;
-    margin-bottom: 550px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-h1 {
-    align-items: center;
-    justify-content: center;
-    margin-left: auto;
-}
-
-/* Centered Container */
-#container {
-    background: #fff;
+/* Login Container */
+#login-container {
+    margin-top: 15%;
     padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 5px 20px rgba(255, 255, 255, 0.1);
+    text-align: center;
+    position: fixed;
+    top: 5%;
+}
+
+#login-container h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+#login-container a button {
+    background: white;
+    color: #6a11cb;
+    padding: 12px 20px;
+    font-size: 1.2em;
+    border: none;
     border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+#login-container a button:hover {
+    background: #2575fc;
+    color: white;
+}
+
+/* Footer */
+footer {
+    position: absolute;
+    bottom: 10px;
     width: 100%;
-    max-width: 400px;
+    font-size: 14px;
+    text-align: center;
+    color: white;
+    padding: 10px 0;
+}
+
+#container {
+    width: 40%;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
     text-align: center;
 }
 
-/* Form Styling */
+#container h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: white;
+}
+
+/* Input Fields */
 form {
     display: flex;
     flex-direction: column;
 }
 
-/* Labels */
 label {
     font-weight: bold;
-    margin-bottom: 5px;
+    margin-top: 10px;
     text-align: left;
-    display: block;
 }
 
-/* Input Fields */
 input {
     padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
+    margin-top: 5px;
     border-radius: 5px;
-    font-size: 16px;
+    border: none;
+    outline: none;
 }
 
-/* Buttons */
+/* Signup Button */
 button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px;
+    margin-top: 15px;
+    background: white;
+    color: #ff7e5f;
+    padding: 12px;
+    font-size: 1.2em;
     border: none;
-    border-radius: 5px;
-    font-size: 16px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: all 0.3s ease-in-out;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background: #feb47b;
+    color: white;
 }
 
-/* Login Button Styling */
+/* Login Link Button */
 a button {
-    background-color: #28a745;
-    margin-top: 20px;
+    margin-top: 10px;
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 12px;
+    font-size: 1.1em;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
 }
 
 a button:hover {
-    background-color: #218838;
+    background: white;
+    color: #ff7e5f;
 }
 
-
-/* General Page Styling */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: white;
+/* Responsive Design */
+@media (max-width: 768px) {
+    #container {
+        width: 80%;
+    }
 }
 
-/* Chat Container */
-#chat-box {
-    width: 60%;
-    margin: 20px auto;
+/* Sidebar for Groups */
+#group-sidebar {
+    width: 25%;
+    background-color: #202c33;
     padding: 10px;
-    border-radius: 5px;
+    border-right: 1px solid #2a3942;
+    overflow-y: auto;
+    
 }
 
-/* Chat Header */
-h1 {
+#group-sidebar h3 {
     text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: auto;
-    padding: auto;
-    border: 10px;
-    
 }
 
-/* Message List */
-#messages-list {
+#group-list {
     list-style-type: none;
     padding: 0;
-    margin: 0;
 }
 
-/* Message Styling */
-#messages-list li {
+.group-item {
     padding: 10px;
     margin: 5px 0;
-    background-color: lightgray;
+    background-color: #2a3942;
     border-radius: 5px;
-    font-size: 16px;
-}
-
-#chat-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-#chat-list li {
-    padding: 10px;
-    margin: 5px 0;
-    background-color: #9da85c;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-/* Input Area */
-#chat-input-container {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #1f4a61;
-    padding: 10px;
-    display: flex;
-}
-
-/* Chat Input */
-#chat-input {
-    flex: 1;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 30px;
-    border: none;
-    outline: none;
-    margin-left: 15px;
-}
-#groupchat-input-container {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #1f4a61;
-    padding: 10px;
-    display: flex;
-}
-
-/* Chat Input */
-#groupchat-input {
-    flex: 1;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 30px;
-    border: none;
-    outline: none;
-    margin-left: 15px;
-}
-
-
-/* Send Button */
-#send-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    margin-left: 5px;
-    border-radius: 30px;
-    margin-right: 5px;
-    
-}
-
-#send-button:hover {
-    background-color: #70c4bd;
-}
-
-#logoutBtn {
-    margin-left: auto; /* Pushes the button to the right */
-    
-}
-
-li {
     cursor: pointer;
 }
 
-.my-message {
-    background-color: #d1e7dd; /* Light Green */
-    color: #0a3622; /* Dark Green Text */
-    
+.group-item:hover {
+    background-color: #3b4a54;
 }
 
-.other-message {
-    background-color: #cfe2ff; /* Light Blue */
-    color: #084298; /* Dark Blue Text */
+/* Chat Window */
+#groupchat-box {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #0b141a;
+    margin-top: 200px;
     
 }
 
 #groupmessages-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto;
 }
 
-/* Message Styling */
-#groupmessages-list li {
-    padding: 10px;
-    margin: 5px 0;
-    background-color: lightgray;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-.container {
+/* Chat Input */
+#groupchat-input-container {
+    overflow-y: auto;
+    flex-grow: 1;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 20px;
+    position: fixed;
     width: 100%;
+    bottom: 0;    
 }
 
-/* Sidebar on the Left */
-#sidebar-group {
-    width: 40%;
-    background: #f8f9fa;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Invite Section on the Right */
-#invite-container {
-    width: 40%;
-    background: #e9ecef;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    #sidebar-group, #invite-container {
-        width: 90%;
-        margin-bottom: 20px;
-    }
-}
-
-#search-bar {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 20px;
-    padding: 10px;
-    background: #f1f1f1;
-    border-radius: 8px;
-}
-
-#search-bar input {
-    width: 60%;
+#groupchat-input {
+    flex-grow: 1;
     padding: 8px;
-    margin-right: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: none;
+    border-radius: 20px;
+    background-color: #2a3942;
+    color: white;
+    outline: none;
 }
 
-#search-bar button {
-    padding: 8px 12px;
-    background: #28a745;
-    color: white;
+#send-button {
+    margin-left: 10px;
+    padding: 8px 15px;
+    background-color: #008069;
     border: none;
-    border-radius: 5px;
+    border-radius: 20px;
+    color: white;
     cursor: pointer;
 }
 
-#search-bar button:hover {
-    background: #218838;
+#send-button:hover {
+    background-color: #026d56;
 }
 
-/* Main Content Layout */
-.main-content {
+/* Header */
+.headings {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: #202c33;
+    padding: 10px 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    margin-bottom: 20px;
+    height: 80px;
+    
+}
+.headings h1 {
+    font-size: 40px;
+    margin: 0;
+    font-weight: 300;
+    margin-left: 500px;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
 }
 
-/* Sidebar (Left) */
+/* System Messages */
+.system-message {
+    text-align: center;
+    font-size: 14px;
+    color: #bbb;
+    margin: 10px 0;
+}
 
-
-/* Invite Section (Right) */
-#invite-container {
-    width: 40%;
-    background: #e9ecef;
-    padding: 15px;
+/* Chat Bubbles */
+.message {
+    max-width: 60%;
+    padding: 10px;
+    margin: 8px;
     border-radius: 8px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    word-wrap: break-word;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .main-content {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    #sidebar-group, #invite-container {
-        width: 90%;
-        margin-bottom: 20px;
-    }
+/* User message */
+.user-message {
+    background-color: #0084ff;
+    color: white;
+    align-self: flex-end;
 }
 
+/* Other user message */
+.other-message {
+    background-color: #e0e0e0;
+    align-self: flex-start;
+}
 
+/* Image inside messages */
+.message img {
+    max-width: 200px; /* Set a max size */
+    height: auto;
+    border-radius: 8px;
+}
+
+.sent {
+    background-color: #008069;
+    align-self: flex-end;
+}
+
+.received {
+    background-color: #2a3942;
+}
+
+#logoutBtn {
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    left: 1200px;
+    border: none;
+    text-align: center;
+}
+
+#back-to-groups {
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    
+}
+
+#sidebar-group {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+
+    
+}
+
+#search-user-input {
+    margin-top: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    
+}
 
